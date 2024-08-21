@@ -1,0 +1,18 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  scoring:
+    command: npm test
+    files:
+      - junit.xml
+      - frontend.xml
+  readonly_paths:
+    - frontend/src/App.test.js
+    - backend/spec/app.spec.js
+  ide_config:
+    default_open_files:
+      - frontend/src/App.js
+    project_menu:
+      run: npm start
+      install: npm install && npm install --prefix frontend
+      test: npm test
